@@ -1,0 +1,15 @@
+<!-- src/app/pages/admin-usuarios/admin-usuarios.component.html -->
+<h2>Administración - Crear usuario</h2>
+<label>Email</label>
+<input [(ngModel)]="email" type="email" />
+<label>Password</label>
+<input [(ngModel)]="password" type="password" />
+<label>Nombre</label>
+<input [(ngModel)]="name" />
+<label>Rol</label>
+<select [(ngModel)]="role">
+  <option value="CLIENT">CLIENT</option>
+  <option value="ADMIN">ADMIN</option>
+</select>
+<button (click)="crear()">Crear</button>
+<p>{{message}}</p>

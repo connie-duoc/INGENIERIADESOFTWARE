@@ -1,0 +1,42 @@
+﻿generator client { provider = "prisma-client-js" }
+datasource db { provider = "mysql"; url = env("DATABASE_URL") }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(CLIENT)
+  createdAt DateTime @default(now())
+  reservations Reservation[]
+}
+
+model Room {
+  id        Int      @id @default(autoincrement())
+  hotelName String
+  roomNumber String
+  type      String
+  capacity  Int
+  price     Float
+  status    RoomStatus @default(ACTIVE)
+  reservations Reservation[]
+}
+
+model Reservation {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  roomId    Int
+  checkIn   DateTime
+  checkOut  DateTime
+  guests    Int
+  status    ResStatus @default(PENDING)
+  total     Float     @default(0)
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  room Room @relation(fields: [roomId], references: [id])
+}
+
+enum Role { ADMIN CLIENT }
+enum RoomStatus { ACTIVE INACTIVE }
+enum ResStatus { PENDING CONFIRMED CANCELLED }

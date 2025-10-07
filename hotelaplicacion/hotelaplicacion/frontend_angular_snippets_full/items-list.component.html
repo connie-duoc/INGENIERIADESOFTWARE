@@ -1,0 +1,10 @@
+<!-- src/app/pages/items-list/items-list.component.html -->
+<h2>Ítems y stock</h2>
+<table border="1" cellpadding="4">
+  <tr><th>ID</th><th>Nombre</th><th>Stock</th></tr>
+  <tr *ngFor="let it of items">
+    <td>{{it.id}}</td>
+    <td>{{it.name}}</td>
+    <td>{{it.stock}}</td>
+  </tr>
+</table>

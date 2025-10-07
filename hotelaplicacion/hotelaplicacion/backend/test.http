@@ -1,0 +1,33 @@
+### 1) Login
+POST http://localhost:4000/api/auth/login
+Content-Type: application/json
+
+{ "email": "demo@demo.cl", "password": "Demo*123" }
+
+### 2) Items (sin auth)
+GET http://localhost:4000/api/items
+
+### 3) Crear reserva (pega el token)
+POST http://localhost:4000/api/reservations
+Authorization: Bearer <TOKEN>
+Content-Type: application/json
+
+{ "itemId": 1, "date": "2025-10-06T12:00:00.000Z" }
+
+### 4) Mis reservas (con token)
+GET http://localhost:4000/api/reservations
+Authorization: Bearer <TOKEN>
+
+### 5) Editar perfil
+PUT http://localhost:4000/api/users/me
+Authorization: Bearer <TOKEN>
+Content-Type: application/json
+
+{ "name": "Connie Actualizada" }
+
+### 6) Crear usuario (ADMIN)
+POST http://localhost:4000/api/users
+Authorization: Bearer <TOKEN>
+Content-Type: application/json
+
+{ "email":"new@demo.cl","password":"Clave*123","name":"Nuevo","role":"CLIENT" }

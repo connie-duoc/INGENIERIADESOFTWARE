@@ -1,0 +1,10 @@
+<!-- src/app/pages/login/login.component.html -->
+<h2>Iniciar sesión</h2>
+<form (ngSubmit)="doLogin()">
+  <label>Email</label>
+  <input [(ngModel)]="email" name="email" type="email" required />
+  <label>Contraseña</label>
+  <input [(ngModel)]="password" name="password" type="password" required />
+  <button type="submit">Ingresar</button>
+</form>
+<p>{{message}}</p>
