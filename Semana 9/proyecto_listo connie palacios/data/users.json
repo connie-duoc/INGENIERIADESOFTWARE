@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Administrador",
+    "email": "admin@demo.cl",
+    "password": "$2a$10$QZu8UAmwZxs1yy.Z905un.achjjYlLiCnujX3pvSjhcNaBGZ7eVHi",
+    "role": "admin"
+  },
+  {
+    "name": "Cliente Demo",
+    "email": "cliente@demo.cl",
+    "password": "$2a$10$dJhfzUPk0JvtCyE2zJ3t2.ca0YwVpm/sWJ6ZJqfGJnm34cDxLNiTC",
+    "role": "client"
+  }
+]
